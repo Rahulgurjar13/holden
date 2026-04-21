@@ -178,15 +178,13 @@ export function ProductDetail() {
             </div>
 
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <a
-                href={product.link}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/contact"
                 className="group inline-flex items-center justify-between gap-6 bg-navy hover:bg-accent text-paper px-8 py-4 transition-all duration-500"
               >
-                <span className="uppercase tracking-wider text-[13px] font-bold">View Details</span>
+                <span className="uppercase tracking-wider text-[13px] font-bold">Get in Touch</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </a>
+              </Link>
               <Link
                 to="/contact"
                 className="group inline-flex items-center justify-between gap-6 border border-navy text-navy hover:bg-navy hover:text-paper px-8 py-4 transition-all duration-500"

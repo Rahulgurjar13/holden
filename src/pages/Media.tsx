@@ -45,12 +45,7 @@ export default function Media() {
           <div className="grid md:grid-cols-3 gap-x-8 gap-y-14">
             {MEDIA.map((m, i) => (
               <Reveal key={m.title} delay={i * 0.1}>
-                <a
-                  href={m.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block"
-                >
+                <div className="group block cursor-default">
                   <div className="aspect-[4/3] overflow-hidden bg-muted mb-6">
                     <img
                       src={accentImages[i]}
@@ -68,10 +63,10 @@ export default function Media() {
                     {m.title}
                   </h3>
                   <p className="text-[14px] leading-[1.65] text-foreground/65 mb-5">{m.excerpt}</p>
-                  <div className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider text-navy group-hover:text-accent transition-colors font-bold">
-                    Read More <ArrowUpRight className="h-3.5 w-3.5" />
-                  </div>
-                </a>
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-[12px] uppercase tracking-wider text-navy hover:text-accent transition-colors font-bold">
+                    Enquire Now <ArrowUpRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
               </Reveal>
             ))}
           </div>

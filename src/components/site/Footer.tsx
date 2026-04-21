@@ -87,10 +87,10 @@ export default function Footer() {
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-paper/50">Registered office</span>
               </li>
               <li>
-                <a href="https://www.sanitaryholden.com/login.php" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-paper hover:!text-accent">
+                <Link to="/contact" className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-paper hover:!text-accent">
                   <span style={{ boxShadow: "inset 0 -1px 0 currentColor" }}>Partners login</span>
                   <ArrowUpRight className="h-3.5 w-3.5" />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

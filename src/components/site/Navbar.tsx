@@ -122,10 +122,8 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center gap-3">
-            <a
-              href="https://www.sanitaryholden.com/login.php"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contact"
               className={cn(
                 "hidden md:inline-flex items-center gap-2 text-[12px] font-sans uppercase tracking-[0.06em] font-semibold px-5 py-2.5 transition-all duration-300 border",
                 solid
@@ -135,7 +133,7 @@ export default function Navbar() {
             >
               Partners Login
               <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
+            </Link>
             <button
               onClick={() => setMobileOpen((v) => !v)}
               className={cn(
@@ -196,14 +194,12 @@ export default function Navbar() {
               </li>
             ))}
             <li className="pt-4">
-              <a
-                href="https://www.sanitaryholden.com/login.php"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/contact"
                 className="block text-center bg-navy text-paper font-sans font-semibold uppercase tracking-[0.06em] text-xs px-5 py-3.5"
               >
                 Partners Login
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
