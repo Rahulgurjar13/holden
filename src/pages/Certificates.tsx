@@ -16,20 +16,20 @@ export default function Certificates() {
   return (
     <SiteLayout>
       {/* Page Hero */}
-      <section className="relative pt-36 pb-14 lg:pt-44 lg:pb-20 bg-paper border-b border-border">
+      <section className="relative pt-28 pb-10 lg:pt-32 lg:pb-14 bg-hero-warm border-b border-border">
         <div className="container">
           <Reveal>
-            <nav className="mb-12 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+            <nav className="mb-5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               <Link to="/" className="hover:text-accent transition-colors">Home</Link>
               <span className="text-border">›</span>
               <span className="text-navy">Certificates</span>
             </nav>
-            <div className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-border">
+            <div className="grid lg:grid-cols-12 gap-8 ">
               <div className="lg:col-span-3">
                 <div className="text-[11px] uppercase tracking-[0.25em] text-accent font-bold">Compliance & Quality</div>
               </div>
               <div className="lg:col-span-9">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-navy leading-[1.02] tracking-tight text-balance font-extrabold">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-heading-gradient leading-[1.02] tracking-tight text-balance font-extrabold">
                   Certificates &{" "}
                   <span className="text-accent">Accreditations.</span>
                 </h1>
@@ -48,7 +48,7 @@ export default function Certificates() {
           <div>
             {certs.map((c, i) => (
               <Reveal key={c.title} delay={i * 0.05}>
-                <div className="group grid lg:grid-cols-12 gap-6 lg:gap-10 items-start py-10 lg:py-12 border-b border-border hover:bg-paper-warm/60 transition-colors duration-500 -mx-6 px-6 lg:-mx-10 lg:px-10">
+                <div className="group grid lg:grid-cols-12 gap-6 lg:gap-10 items-start py-10 lg:py-12  hover:bg-paper-warm/60 transition-colors duration-500 -mx-6 px-6 lg:-mx-10 lg:px-10">
                   <div className="lg:col-span-1">
                     <span className="font-mono text-xs text-accent">{c.num}</span>
                   </div>

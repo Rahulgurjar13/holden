@@ -40,24 +40,24 @@ export default function About() {
   return (
     <SiteLayout>
       {/* Page Hero */}
-      <section className="relative pt-36 pb-14 lg:pt-44 lg:pb-20 bg-paper border-b border-border">
+      <section className="relative pt-28 pb-10 lg:pt-32 lg:pb-14 bg-hero-warm border-b border-border">
         <div className="container">
           <Reveal>
             {/* Breadcrumb */}
-            <nav className="mb-12 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+            <nav className="mb-5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               <Link to="/" className="hover:text-accent transition-colors">Home</Link>
               <span className="text-border">›</span>
               <span className="text-navy">About Us</span>
             </nav>
 
-            <div className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-border">
+            <div className="grid lg:grid-cols-12 gap-8 ">
               <div className="lg:col-span-3">
                 <div className="text-[11px] uppercase tracking-[0.25em] text-accent font-bold">
                   About Our Company
                 </div>
               </div>
               <div className="lg:col-span-9">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-navy leading-[1.02] tracking-tight text-balance font-extrabold">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-heading-gradient leading-[1.02] tracking-tight text-balance font-extrabold">
                   A 16-year flagship in India's healthcare{" "}
                   <span className="text-accent">manufacturing & supply.</span>
                 </h1>
@@ -136,7 +136,7 @@ export default function About() {
       {/* Vision / Mission / Why Us */}
       <section className="py-20 lg:py-24 bg-paper-warm border-t border-border">
         <div className="container">
-          <Reveal className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-border">
+          <Reveal className="grid lg:grid-cols-12 gap-8 ">
             <div className="lg:col-span-3">
               <div className="text-[13px] uppercase tracking-wider text-accent font-bold">Our Pillars</div>
             </div>
@@ -171,6 +171,107 @@ export default function About() {
                     Know More
                   </div>
                 </a>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Us Detail — OEM + 2019 Expansion + Quote */}
+      <section className="py-20 lg:py-28 bg-paper border-t border-border">
+        <div className="container">
+          <Reveal className="grid lg:grid-cols-12 gap-8 ">
+            <div className="lg:col-span-3">
+              <div className="text-[13px] uppercase tracking-wider text-accent font-bold">Why Choose Us</div>
+            </div>
+            <div className="lg:col-span-9">
+              <h2 className="text-4xl lg:text-5xl text-navy leading-[1.05] tracking-tight font-extrabold">
+                OEM capability, clinical partnerships & <span className="text-accent">government expertise.</span>
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="mt-12 grid lg:grid-cols-2 gap-12 lg:gap-20">
+            <Reveal className="space-y-6 text-[17px] leading-relaxed text-foreground/75">
+              <p>
+                We, Ghodu Infotech Private Limited, are OEM of all type of "Swachh Bharat Mission Products" like{" "}
+                <span className="text-navy font-semibold">
+                  Garbage Hopper/Tipper, Dustbins, Wheel Barrow, Garbage Tricycle/e-rickshaw, Sludge Suction Machine, Refuse Compactor, Dumper Placer, Bio Toilets (Modular, Portable and Mobile), Sprinkle Water, Road Sweeping Machine and Municipality Waste Segregation Plant,
+                </span>{" "}
+                other related Products like Recovery Vehicle, Fire Fighting Equipment, Sky lift, Water Tanker, Hydraulic trolley and all type of Agriculture Equipment and Bio Medical Waste Disinfection System (UVR & Microwave based dual).
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.1} className="space-y-6 text-[17px] leading-relaxed text-foreground/75">
+              <p>
+                In the year 2019 the company entered into supply of health products mainly Consumables like{" "}
+                <span className="text-navy font-semibold">All types of Gloves, Mask, Sanitary Napkins, Face shield, Goggles</span>{" "}
+                and Medical Equipment like{" "}
+                <span className="text-navy font-semibold">High end ICU Beds, Multipara monitor, ECG Machine, Cardiac Monitor, Defibrillator & Oxygen Concentrators.</span>
+              </p>
+              <p>
+                We are partnered with various respected brands of Medical Supply like{" "}
+                <span className="text-navy font-semibold">Medicyl, Softy, Uniem, ArjoHuntleigh Healthcare India Private Limited, Taurus, Soothe Healthcare, CU Medical, Acer.</span>
+              </p>
+            </Reveal>
+          </div>
+
+          {/* GHODU Quote */}
+          <Reveal delay={0.15} className="mt-16 border-l-4 border-accent pl-8 py-2">
+            <blockquote className="text-xl lg:text-2xl text-navy font-medium leading-[1.5] italic">
+              "In a future-ready world, technology helps overcome physical and national boundaries to ensure control and efficiency in large Businesses with production locations spread across countries and regions. At GHODU, this is not a concept for the future but a reality already."
+            </blockquote>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Three Key Specialization Areas */}
+      <section className="py-20 lg:py-24 bg-paper-warm border-t border-border">
+        <div className="container">
+          <Reveal className="grid lg:grid-cols-12 gap-8 ">
+            <div className="lg:col-span-3">
+              <div className="text-[13px] uppercase tracking-wider text-accent font-bold">Specialisations</div>
+            </div>
+            <div className="lg:col-span-9">
+              <h2 className="text-4xl lg:text-5xl text-navy leading-[1.05] tracking-tight font-extrabold">
+                We specialise in three key areas that elevate our{" "}
+                <span className="text-accent">services and amenities.</span>
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="mt-10 grid md:grid-cols-3 gap-1 bg-border/20 border border-border">
+            {[
+              {
+                num: "01",
+                title: "Swachh Bharat Mission Support",
+                body: "We're dedicated to supporting the Swachh Bharat Mission by providing essential solutions. We offer a comprehensive range of sanitation solutions to support this Mission. We also contribute to the Swachh Bharat Mission and Indian Society as whole by providing solutions and essential products that are making a difference in the Society.",
+              },
+              {
+                num: "02",
+                title: "Advanced Medical Equipments",
+                body: "We supply advanced medical equipment to central government hospitals, defence establishments and public health institutions across India — from ICU beds and ECG machines to oxygen concentrators and multipara monitors.",
+              },
+              {
+                num: "03",
+                title: "Tailored Healthcare Solutions for Government Projects",
+                body: "Our infrastructure and procurement expertise is specifically designed for government timelines, compliance requirements and public health mandates — delivering customised, audit-ready solutions for every project.",
+              },
+            ].map((s, i) => (
+              <Reveal
+                key={s.num}
+                delay={i * 0.1}
+                className="group relative bg-paper p-7 lg:p-10 hover:bg-navy transition-colors duration-500"
+              >
+                <div className="space-y-5">
+                  <span className="text-sm text-accent font-bold tracking-widest block">{s.num}</span>
+                  <h3 className="text-xl lg:text-2xl text-navy group-hover:text-white leading-tight font-bold transition-colors duration-300">
+                    {s.title}
+                  </h3>
+                  <p className="text-[15px] leading-relaxed text-foreground/75 group-hover:text-white/70 transition-colors duration-300">
+                    {s.body}
+                  </p>
+                </div>
               </Reveal>
             ))}
           </div>

@@ -16,20 +16,20 @@ export function ServicesList() {
   return (
     <SiteLayout>
       {/* Page Hero */}
-      <section className="relative pt-36 pb-14 lg:pt-44 lg:pb-20 bg-paper border-b border-border">
+      <section className="relative pt-28 pb-10 lg:pt-32 lg:pb-14 bg-hero-warm border-b border-border">
         <div className="container">
           <Reveal>
-            <nav className="mb-12 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+            <nav className="mb-5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               <Link to="/" className="hover:text-accent transition-colors">Home</Link>
               <span className="text-border">›</span>
               <span className="text-navy">Services</span>
             </nav>
-            <div className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-border">
+            <div className="grid lg:grid-cols-12 gap-8 ">
               <div className="lg:col-span-3">
                 <div className="text-[11px] uppercase tracking-[0.25em] text-accent font-bold">End-to-End Capability</div>
               </div>
               <div className="lg:col-span-9">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-navy leading-[1.02] tracking-tight text-balance font-extrabold">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-heading-gradient leading-[1.02] tracking-tight text-balance font-extrabold">
                   Our <span className="text-accent">Services.</span>
                 </h1>
                 <p className="mt-8 text-lg lg:text-xl text-foreground/75 max-w-2xl leading-[1.55]">
@@ -51,7 +51,7 @@ export function ServicesList() {
                   href={s.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group grid lg:grid-cols-12 gap-6 lg:gap-10 items-baseline py-10 lg:py-12 border-b border-border hover:bg-paper-warm/60 transition-colors duration-500 -mx-6 px-6 lg:-mx-10 lg:px-10"
+                  className="group grid lg:grid-cols-12 gap-6 lg:gap-10 items-baseline py-10 lg:py-12  hover:bg-paper-warm/60 transition-colors duration-500 -mx-6 px-6 lg:-mx-10 lg:px-10"
                 >
                   <div className="lg:col-span-1">
                     <span className="font-mono text-xs text-accent">{s.number}</span>
@@ -112,17 +112,17 @@ export function ServiceDetail() {
   return (
     <SiteLayout>
       {/* Page Hero */}
-      <section className="relative pt-36 pb-14 lg:pt-44 lg:pb-20 bg-paper border-b border-border">
+      <section className="relative pt-28 pb-10 lg:pt-32 lg:pb-14 bg-hero-warm border-b border-border">
         <div className="container">
           <Reveal>
-            <nav className="mb-12 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+            <nav className="mb-5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               <Link to="/" className="hover:text-accent transition-colors">Home</Link>
               <span className="text-border">›</span>
               <Link to="/services" className="hover:text-accent transition-colors">Services</Link>
               <span className="text-border">›</span>
               <span className="text-navy">{service.name}</span>
             </nav>
-            <div className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-border">
+            <div className="grid lg:grid-cols-12 gap-8 ">
               <div className="lg:col-span-3">
                 <div className="text-[11px] uppercase tracking-[0.25em] text-accent font-bold">
                   Service {service.number}
@@ -157,7 +157,7 @@ export function ServiceDetail() {
               <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-bold mb-8">Our Delivery Approach</div>
               <ul className="space-y-0">
                 {deliverables.map((d, i) => (
-                  <li key={d} className="flex items-start gap-5 py-5 border-b border-border last:border-0">
+                  <li key={d} className="flex items-start gap-5 py-5  last:border-0">
                     <span className="font-mono text-xs text-accent mt-0.5 shrink-0">0{i + 1}</span>
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
@@ -206,6 +206,179 @@ export function ServiceDetail() {
           </Reveal>
         </div>
       </section>
+
+      {/* ── Modular OT rich content ── */}
+      {slug === "modular-ot" && (
+        <section className="py-20 lg:py-24 bg-navy border-t border-border">
+          <div className="container">
+            <Reveal className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
+              <div className="lg:col-span-3">
+                <div className="text-[13px] uppercase tracking-wider text-accent font-bold">Key Benefits</div>
+              </div>
+              <div className="lg:col-span-9">
+                <h2 className="text-3xl lg:text-4xl text-white font-extrabold">
+                  Why choose a <span className="text-accent">Modular OT?</span>
+                </h2>
+              </div>
+            </Reveal>
+            <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-1 bg-white/5 border border-white/10">
+              {[
+                { num: "01", title: "Faster Commissioning", desc: "Prefabricated modules integrate into existing facilities much faster than traditional construction methods." },
+                { num: "02", title: "Cost Effective", desc: "Flexible, cost-effective solution that dramatically reduces both build time and capital expenditure." },
+                { num: "03", title: "Sustainable Materials", desc: "Modular OTs incorporate sustainable materials and design principles, reducing environmental impact." },
+                { num: "04", title: "Scalable & Portable", desc: "Easily transported, assembled and expanded as your healthcare facility's needs grow." },
+              ].map((c, i) => (
+                <Reveal key={c.num} delay={i * 0.1} className="group p-8 border-r border-white/5 last:border-0 hover:bg-accent/20 transition-colors duration-500">
+                  <div className="space-y-4">
+                    <span className="text-4xl font-extrabold text-white/15 block">{c.num}</span>
+                    <h3 className="text-[17px] text-white font-bold leading-snug">{c.title}</h3>
+                    <p className="text-[14px] text-white/60 leading-relaxed">{c.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── ICU rich content ── */}
+      {slug === "icu" && (
+        <section className="py-20 lg:py-24 bg-navy border-t border-border">
+          <div className="container">
+            <Reveal className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
+              <div className="lg:col-span-3">
+                <div className="text-[13px] uppercase tracking-wider text-accent font-bold">ICU Capabilities</div>
+              </div>
+              <div className="lg:col-span-9">
+                <h2 className="text-3xl lg:text-4xl text-white font-extrabold">
+                  Critical care designed for <span className="text-accent">patient recovery.</span>
+                </h2>
+              </div>
+            </Reveal>
+            <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-1 bg-white/5 border border-white/10">
+              {[
+                { num: "01", title: "24/7 Specialist Care", desc: "Certified intensivists, critical care nurses and specialized healthcare professionals available around the clock." },
+                { num: "02", title: "Advanced Life Support", desc: "Full infrastructure for ventilators, cardiac monitors, infusion pumps and all essential critical care devices." },
+                { num: "03", title: "Healing Environment", desc: "ICU spaces designed to minimize patient stress, reduce infection risk and foster faster recovery." },
+                { num: "04", title: "Infection Control", desc: "Strict NABH-compliant infection control protocols and negative pressure room options available." },
+              ].map((c, i) => (
+                <Reveal key={c.num} delay={i * 0.1} className="group p-8 border-r border-white/5 last:border-0 hover:bg-accent/20 transition-colors duration-500">
+                  <div className="space-y-4">
+                    <span className="text-4xl font-extrabold text-white/15 block">{c.num}</span>
+                    <h3 className="text-[17px] text-white font-bold leading-snug">{c.title}</h3>
+                    <p className="text-[14px] text-white/60 leading-relaxed">{c.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Diagnostics Lab rich content ── */}
+      {slug === "diagnostics-lab" && (
+        <section className="py-20 lg:py-24 bg-navy border-t border-border">
+          <div className="container">
+            <Reveal className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
+              <div className="lg:col-span-3">
+                <div className="text-[13px] uppercase tracking-wider text-accent font-bold">Lab Features</div>
+              </div>
+              <div className="lg:col-span-9">
+                <h2 className="text-3xl lg:text-4xl text-white font-extrabold">
+                  Accurate results. <span className="text-accent">Rigorous standards.</span>
+                </h2>
+              </div>
+            </Reveal>
+            <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-1 bg-white/5 border border-white/10">
+              {[
+                { num: "01", title: "Affordable & Timely", desc: "High-quality, convenient and affordable tests and checkups with fast turnaround for accurate results." },
+                { num: "02", title: "Online Access", desc: "We provide online access to test results and medical records of our patients for seamless follow-up care." },
+                { num: "03", title: "Quality Standards", desc: "Labs adhere to strict quality standards and emphasize upon rigorous testing processes at every step." },
+                { num: "04", title: "Comprehensive Testing", desc: "From routine bloodwork to specialized diagnostics — an exceptional healthcare solution under one roof." },
+              ].map((c, i) => (
+                <Reveal key={c.num} delay={i * 0.1} className="group p-8 border-r border-white/5 last:border-0 hover:bg-accent/20 transition-colors duration-500">
+                  <div className="space-y-4">
+                    <span className="text-4xl font-extrabold text-white/15 block">{c.num}</span>
+                    <h3 className="text-[17px] text-white font-bold leading-snug">{c.title}</h3>
+                    <p className="text-[14px] text-white/60 leading-relaxed">{c.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Engineering Labs rich content ── */}
+      {slug === "engineering-labs" && (
+        <section className="py-20 lg:py-24 bg-navy border-t border-border">
+          <div className="container">
+            <Reveal className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
+              <div className="lg:col-span-3">
+                <div className="text-[13px] uppercase tracking-wider text-accent font-bold">Key Areas</div>
+              </div>
+              <div className="lg:col-span-9">
+                <h2 className="text-3xl lg:text-4xl text-white font-extrabold">
+                  Comprehensive engineering lab <span className="text-accent">capabilities.</span>
+                </h2>
+              </div>
+            </Reveal>
+            <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-1 bg-white/5 border border-white/10">
+              {[
+                { num: "01", title: "Calibration & Metrology", desc: "Precision calibration and metrology services ensuring instruments and systems meet required specifications." },
+                { num: "02", title: "3D Printing & Additive Manufacturing", desc: "Rapid prototyping and additive manufacturing for faster product development cycles." },
+                { num: "03", title: "CAD & Simulation", desc: "Computer-aided design and simulation services enabling virtual testing before physical production." },
+                { num: "04", title: "Electrical & Electronic Testing", desc: "Circuit analysis, signal processing, and full electrical/electronic testing for compliance." },
+                { num: "05", title: "Mechanical Testing", desc: "Stress, strain and fatigue testing to validate material and product performance under real-world conditions." },
+                { num: "06", title: "Failure Analysis", desc: "Materials characterization and failure analysis to identify root causes and improve product reliability." },
+              ].map((c, i) => (
+                <Reveal key={c.num} delay={(i % 3) * 0.08} className="group p-8 border-r border-b border-white/5 hover:bg-accent/20 transition-colors duration-500">
+                  <div className="space-y-4">
+                    <span className="text-4xl font-extrabold text-white/15 block">{c.num}</span>
+                    <h3 className="text-[17px] text-white font-bold leading-snug">{c.title}</h3>
+                    <p className="text-[14px] text-white/60 leading-relaxed">{c.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Medical Gas Pipeline rich content ── */}
+      {slug === "medical-gas-pipeline" && (
+        <section className="py-20 lg:py-24 bg-navy border-t border-border">
+          <div className="container">
+            <Reveal className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
+              <div className="lg:col-span-3">
+                <div className="text-[13px] uppercase tracking-wider text-accent font-bold">MGPS Capabilities</div>
+              </div>
+              <div className="lg:col-span-9">
+                <h2 className="text-3xl lg:text-4xl text-white font-extrabold">
+                  Safe, efficient medical gas <span className="text-accent">delivery systems.</span>
+                </h2>
+              </div>
+            </Reveal>
+            <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-1 bg-white/5 border border-white/10">
+              {[
+                { num: "01", title: "Design & Engineering", desc: "Custom MGPS designs meeting specific hospital requirements including capacity, layout and gas types." },
+                { num: "02", title: "Installation", desc: "Professional installation of Medical Gases, Medical Air and other gas pipelines to healthcare facilities." },
+                { num: "03", title: "Testing & Commissioning", desc: "Thorough system testing and commissioning guarantees safety and optimal performance at every outlet." },
+                { num: "04", title: "Maintenance", desc: "Ongoing maintenance and support services to keep your MGPS operational and compliant at all times." },
+              ].map((c, i) => (
+                <Reveal key={c.num} delay={i * 0.1} className="group p-8 border-r border-white/5 last:border-0 hover:bg-accent/20 transition-colors duration-500">
+                  <div className="space-y-4">
+                    <span className="text-4xl font-extrabold text-white/15 block">{c.num}</span>
+                    <h3 className="text-[17px] text-white font-bold leading-snug">{c.title}</h3>
+                    <p className="text-[14px] text-white/60 leading-relaxed">{c.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
     </SiteLayout>
   );
 }
