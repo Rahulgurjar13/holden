@@ -23,69 +23,70 @@ export const PRODUCTS: Array<{
   description: string;
   variants: string[];
   image: string;
+  link: string;
 }> = [
   {
     slug: "ambulances",
     name: "Ambulances",
     short: "BLS, ALS, Air & Water Ambulances",
-    description:
-      "Mission-ready emergency response vehicles built to government & defence specifications, equipped with advanced life-saving medical infrastructure.",
-    variants: ["BLS — Basic Life Support", "ALS — Advance Life Support", "Air Ambulance", "Water Ambulance"],
+    description: "BLS basic life support ALS advance life support Air Ambulance Water ambulance",
+    variants: ["BLS Basic Life Support", "ALS Advance Life Support", "Air Ambulance", "Water Ambulance"],
     image: ambulance,
+    link: "https://holdenindia.com/ambulances/",
   },
   {
     slug: "health-atm",
     name: "Health ATM",
-    short: "Self-service diagnostic kiosks",
-    description:
-      "Connected health screening kiosks delivering vitals, BMI, ECG and lab-grade tests in under five minutes — deployable at panchayats, hospitals and corporates.",
+    short: "Basic, Advance, Lab in Bag",
+    description: "Connected health screening kiosks delivering vitals, BMI, ECG and lab-grade tests in under five minutes.",
     variants: ["Basic", "Advance", "Lab in Bag"],
     image: healthatm,
+    link: "https://holdenindia.com/health-atm/",
   },
   {
     slug: "lmo",
     name: "Liquid Medical Oxygen (LMO)",
-    short: "Cryogenic LMO storage 6KL–20KL",
-    description:
-      "Turn-key liquid medical oxygen storage systems engineered for tertiary care hospitals — capacities from 6KL to 20KL with full vaporiser & pipeline integration.",
-    variants: ["6 KL", "10 KL", "13 KL", "20 KL"],
+    short: "6KL 10KL 13KL 20KL",
+    description: "6KL 10KL 13KL 20KL cryogenic storage solutions for tertiary care hospitals.",
+    variants: ["6KL", "10KL", "13KL", "20KL"],
     image: lmo,
+    link: "https://holdenindia.com/lmo/",
   },
   {
     slug: "psa",
-    name: "PSA Oxygen Generation Plant",
-    short: "On-site PSA oxygen 45–2000 LPM",
-    description:
-      "Pressure Swing Adsorption oxygen plants from 45 LPM up to 2000 LPM — energy-efficient, IS/ISO compliant, with remote monitoring.",
-    variants: ["45 LPM", "200 LPM", "500 LPM", "1000 LPM", "2000 LPM"],
+    name: "PSA (Oxygen Generation Plant)",
+    short: "45LPM to 2000LPM",
+    description: "45LPM to 2000LPM Pressure Swing Adsorption oxygen plants.",
+    variants: ["45LPM to 2000LPM"],
     image: psa,
+    link: "https://holdenindia.com/psa-oxygen-generation-plant/",
   },
   {
     slug: "sanitary-napkin-vending-machine",
     name: "Sanitary Napkin Vending Machine",
-    short: "Basic, Smart & OTP-based vending",
-    description:
-      "Hygiene infrastructure for schools, public restrooms and corporates — from simple push-button units to OTP-authenticated, dashboard-monitored smart machines.",
-    variants: ["Basic — push button", "Smart — with dashboard", "Advance — OTP based"],
+    short: "Basic, Smart, Advance",
+    description: "Basic (push button) Smart (Push button with dashboard) Advance (OTP based with dashboard)",
+    variants: ["Basic (push button)", "Smart (with dashboard)", "Advance (OTP based)"],
     image: vending,
+    link: "https://holdenindia.com/sanitary-napkin-vending-machine/",
   },
   {
     slug: "sbm-swm",
     name: "SBM & SWM Products",
-    short: "Swachh Bharat & solid waste fleet",
-    description:
-      "End-to-end Swachh Bharat Mission & Solid Waste Management equipment supply — from dustbins and tricycles to refuse compactors and bio-toilets.",
+    short: "Swachh Bharat & Solid Waste Management",
+    description: "Garbage Hopper/Tipper, Dustbins, Wheel Barrow, Garbage Tricycle/e-rickshaw, Sludge Suction Machine, Refuse Compactor, Dumper Placer, Bio Toilets.",
     variants: [
-      "Garbage Hopper / Tipper",
+      "Garbage Hopper/Tipper",
       "Dustbins",
       "Wheel Barrow",
-      "Garbage Tricycle / e-Rickshaw",
+      "Garbage Tricycle/e-rickshaw",
       "Sludge Suction Machine",
       "Refuse Compactor",
       "Dumper Placer",
-      "Bio Toilets",
+      "Bio Toilets (Modular, Portable and Mobile)",
     ],
     image: sbm,
+    link: "https://holdenindia.com/sbm-swm-products/",
   },
 ];
 
@@ -95,108 +96,119 @@ export const SERVICES: Array<{
   name: string;
   short: string;
   description: string;
+  link: string;
 }> = [
   {
-    slug: "modular-ot",
-    number: "01",
-    name: "Setting up Modular OT",
-    short: "Turn-key modular operating theatres",
-    description:
-      "Design, supply and commissioning of modular operating theatres conforming to NABH & HTM 03-01 standards — laminar airflow, antibacterial panels, integrated medical gas.",
-  },
-  {
-    slug: "icu",
-    number: "02",
-    name: "Setting up ICU",
-    short: "Critical care unit infrastructure",
-    description:
-      "Complete ICU build-outs including bed-head panels, ventilators, monitors, central station and isolation infrastructure — engineered for level-1 critical care.",
-  },
-  {
     slug: "diagnostics-lab",
-    number: "03",
+    number: "01",
     name: "Setting up Diagnostics Lab",
-    short: "Pathology & molecular labs",
-    description:
-      "End-to-end pathology, biochemistry and molecular diagnostics lab setup — from civil planning to reagent supply, validation and NABL readiness.",
+    short: "Complete lab infrastructure",
+    description: "Professional setup of diagnostic laboratories for various healthcare requirements.",
+    link: "https://holdenindia.com/setting-up-diagnostics-lab/",
   },
   {
     slug: "engineering-labs",
-    number: "04",
+    number: "02",
     name: "Setting up Engineering Labs",
-    short: "Academic & R&D engineering labs",
-    description:
-      "Engineering and skill-development labs for technical institutions and government polytechnics — equipment, calibration and trainer documentation included.",
+    short: "Technical & skill labs",
+    description: "Establishment of modern engineering labs with high-grade technical equipment.",
+    link: "https://holdenindia.com/setting-up-engineering-labs/",
+  },
+  {
+    slug: "modular-ot",
+    number: "03",
+    name: "Setting up Modular OT",
+    short: "Modern operating theatres",
+    description: "NABH-compliant modular OT installations with advanced airflow systems.",
+    link: "https://holdenindia.com/setting-up-modular-ot/",
   },
   {
     slug: "medical-gas-pipeline",
-    number: "05",
+    number: "04",
     name: "Installation of Medical Gas Pipeline System",
-    short: "MGPS to HTM 02-01 standards",
-    description:
-      "Design and installation of medical gas pipeline systems — oxygen, vacuum, N₂O, medical air and AGSS — fully compliant with HTM 02-01 and IS 7396.",
+    short: "Complete MGPS solutions",
+    description: "Safe and compliant medical gas pipeline systems for healthcare facilities.",
+    link: "https://holdenindia.com/installation-of-medical-gas-pipeline-system/",
+  },
+  {
+    slug: "icu",
+    number: "05",
+    name: "Setting up ICU",
+    short: "Critical care unit setup",
+    description: "Full infrastructure for intensive care units including all essential devices.",
+    link: "https://holdenindia.com/setting-up-icu/",
   },
 ];
 
 export const STATS = [
   { value: "100%", label: "Customised Solutions", icon: "Target" },
   { value: "100%", label: "Satisfied Customers", icon: "Smile" },
-  { value: "120+", label: "Projects Complete", icon: "CheckCircle2" },
+  { value: "120+", label: "Project Complete", icon: "CheckCircle2" },
   { value: "20+", label: "States Covered", icon: "MapPin" },
 ];
 
 export const TESTIMONIALS = [
   {
     name: "Dr. Rajesh Sharma",
-    role: "Hospital Administrator",
+    role: "Medical Director",
+    stars: 5,
     quote:
-      "GHODU Infotech's commitment to quality and innovation is truly commendable. Their Medical Oxygen Supply System has been a game-changer for our hospital.",
+      "GHODU Infotech's commitment to quality and innovation is truly commendable. Their Medical Oxygen Supply System has been a game-changer for our hospital, providing a reliable and cost-effective solution for our oxygen needs. We are extremely satisfied with their products and services.",
   },
   {
     name: "Ritu Verma",
     role: "Municipal Officer",
+    stars: 5,
     quote:
-      "We have been relying on GHODU Infotech for our Swachh Bharat Mission products for years. Their waste management solutions have significantly contributed to our city's cleanliness.",
+      "We have been relying on GHODU Infotech for our Swachh Bharat Mission products for years now. Their range of garbage handling equipment and waste management solutions have significantly contributed to our efforts in maintaining cleanliness and hygiene in our city. Highly recommended!",
   },
   {
     name: "Alok Gupta",
-    role: "Industrial Operations Head",
+    role: "Plant Manager",
+    stars: 5,
     quote:
-      "We use GHODU Infotech's Holden brand inert gas generators for industrial processes and are thoroughly impressed with their performance and reliability.",
+      "We have been using GHODU Infotech's Holden brand inert gas generators for our industrial processes, and we are thoroughly impressed with their performance and reliability. The team at GHODU has been incredibly supportive and responsive to our needs, making them our preferred partner for gas generation solutions.",
   },
   {
     name: "Priya Patel",
-    role: "Procurement Lead",
+    role: "Healthcare Professional",
+    stars: 5,
     quote:
-      "GHODU Infotech helped us meet growing demand for medical supplies. Their health products are top-notch quality, ensuring safety of our staff and patients.",
+      "GHODU Infotech has been instrumental in helping us meet the growing demand for medical supplies during these challenging times. Their wide range of health products, including masks, gloves, and medical equipment, have been of top-notch quality and have helped us ensure the safety of our healthcare staff and patients. Thank you, GHODU, for your invaluable support!",
   },
   {
     name: "Dr. Anil Kumar",
     role: "Chief Medical Officer",
+    stars: 5,
     quote:
-      "Their Medical Oxygen Supply System improved efficiency of our operations and reduced costs significantly. Highly recommend to others in healthcare.",
+      "GHODU Infotech's focus on innovation and technology has revolutionized the way we approach oxygen supply in our healthcare facility. Their Medical Oxygen Supply System has not only improved the efficiency of our operations but has also reduced our overall costs significantly. We are extremely satisfied with the performance of their products and would highly recommend them to others in the healthcare industry.",
   },
 ];
 
-export const CLIENTS = ["NTPC", "HITES", "AIIMS", "Dr. RML Hospital", "Defence Medical", "Govt. of India", "Cipla", "Lupin"];
+export const CLIENTS = [
+  { name: "NTPC", meta: "Power" },
+  { name: "HITES", meta: "HLL Infra Tech Services Ltd" },
+  { name: "AIIMS", meta: "Medical Excellence" },
+  { name: "Dr. RML Hospital", meta: "New Delhi" },
+];
 
 export const MEDIA = [
   {
-    title: "Common financial strategies for healthcare businesses",
+    title: "Common financial strategies for businesses",
     date: "12 Mar 2024",
-    excerpt:
-      "How leading healthcare suppliers are restructuring procurement and capex models to deliver more impact per rupee for government clients.",
+    link: "https://holdenindia.com/event/common-financial-strategies-for-businesses/",
+    excerpt: "Exploring financial growth and sustainability models for healthcare enterprises.",
   },
   {
-    title: "Consider consulting services if you're in stagnant areas",
+    title: "Consider consulting services if you're areas like stagnant",
     date: "28 Feb 2024",
-    excerpt:
-      "Why tier-2 and tier-3 hospitals are partnering with infrastructure specialists to leapfrog into modern critical-care delivery.",
+    link: "https://holdenindia.com/event/consider-consulting-services-if-youre-areas-like-stagnant/",
+    excerpt: "Consulting strategies for scaling business in developing markets.",
   },
   {
-    title: "Elevate your business to new heights",
+    title: "Elevate your business to-new heights.",
     date: "05 Feb 2024",
-    excerpt:
-      "Inside Holden India's expansion across 20+ states — and what's next for oxygen, ambulances and modular OT deployments.",
+    link: "https://holdenindia.com/event/elevate-your-business-to-new-heights/",
+    excerpt: "Innovative approaches to take your enterprise to the next level.",
   },
 ];

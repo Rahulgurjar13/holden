@@ -60,16 +60,16 @@ const slides = [
 
 const trust = [
   { name: "NTPC", meta: "Power" },
-  { name: "HITES", meta: "Health" },
+  { name: "HITES", meta: "HLL Infra Tech" },
   { name: "AIIMS", meta: "Medical" },
-  { name: "RML Hospital", meta: "Govt." },
-  { name: "Defence Medical", meta: "Defence" },
+  { name: "RML Hospital", meta: "New Delhi" },
 ];
 
 const stats = [
-  { value: "16+", label: "Years" },
-  { value: "120+", label: "Projects" },
-  { value: "20+", label: "States" },
+  { value: "100%", label: "Customised Solutions" },
+  { value: "100%", label: "Satisfied Customers" },
+  { value: "120+", label: "Project Complete" },
+  { value: "20+", label: "States Covered" },
 ];
 
 export default function Hero() {
@@ -227,15 +227,15 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 pt-6 border-t border-white/10"
             >
-              <div className="flex items-center gap-0">
+              <div className="flex flex-wrap items-center gap-0">
                 {stats.map((stat, i) => (
                   <div key={stat.label} className="flex items-center">
-                    {i > 0 && <div className="h-10 w-px bg-white/15 mx-6 lg:mx-8" />}
+                    {i > 0 && <div className="h-10 w-px bg-white/15 mx-4 lg:mx-6" />}
                     <div>
-                      <div className="text-3xl lg:text-4xl font-extrabold text-white tabular leading-none">
+                      <div className="text-2xl lg:text-3xl font-extrabold text-white tabular leading-none">
                         {stat.value}
                       </div>
-                      <div className="text-[11px] uppercase tracking-wider text-white/50 mt-1.5 font-bold">
+                      <div className="text-[10px] uppercase tracking-wider text-white/50 mt-1.5 font-bold">
                         {stat.label}
                       </div>
                     </div>

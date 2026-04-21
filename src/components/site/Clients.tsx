@@ -27,7 +27,7 @@ export default function Clients() {
           {items.map((c, i) => (
             <div key={i} className="flex items-center shrink-0">
               <span className="text-3xl lg:text-4xl xl:text-5xl text-navy/30 hover:text-navy transition-colors px-12 lg:px-16 whitespace-nowrap font-bold tracking-tight">
-                {c}
+                {c.name}
               </span>
               <span className="text-border text-2xl">·</span>
             </div>

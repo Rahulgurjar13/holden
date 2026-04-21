@@ -30,8 +30,10 @@ export default function Services() {
         <div className="mt-4">
           {SERVICES.map((s, i) => (
             <Reveal key={s.slug} delay={i * 0.05}>
-              <Link
-                to={`/services/${s.slug}`}
+              <a
+                href={s.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group grid lg:grid-cols-12 gap-6 lg:gap-10 items-baseline py-8 lg:py-10 border-b border-border hover:bg-paper-warm/60 transition-colors duration-500 -mx-6 px-6 lg:-mx-10 lg:px-10"
               >
                 <div className="lg:col-span-1">
@@ -52,7 +54,7 @@ export default function Services() {
                     <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </div>
                 </div>
-              </Link>
+              </a>
             </Reveal>
           ))}
         </div>

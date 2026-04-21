@@ -1,41 +1,107 @@
 import SiteLayout from "@/components/site/SiteLayout";
-import PageHero from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { PRODUCTS } from "@/data/site";
-import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 export function ProductsList() {
   return (
     <SiteLayout>
-      <PageHero
-        eyebrow="What We Manufacture"
-        title="Our Products"
-        subtitle="Six product lines engineered, customised and deployed across India's hospitals, municipalities and defence establishments."
-        breadcrumbs={[{ label: "Home", to: "/" }, { label: "Products" }]}
-      />
-      <section className="py-20 lg:py-24">
-        <div className="container grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {PRODUCTS.map((p, i) => (
-            <Reveal key={p.slug} delay={(i % 3) * 0.08}>
-              <Link
-                to={`/products/${p.slug}`}
-                className="group block h-full relative overflow-hidden rounded-2xl bg-white border border-border shadow-card-soft hover-lift"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img src={p.image} alt={p.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 to-transparent opacity-60" />
-                </div>
-                <div className="p-7">
-                  <h3 className="font-display text-xl font-bold text-navy group-hover:text-electric transition-colors">{p.name}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground line-clamp-3">{p.description}</p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-electric group-hover:gap-3 transition-all">
-                    Learn More <ArrowUpRight className="h-4 w-4" />
-                  </span>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
+      {/* Page Hero */}
+      <section className="relative pt-36 pb-14 lg:pt-44 lg:pb-20 bg-paper border-b border-border">
+        <div className="container">
+          <Reveal>
+            <nav className="mb-12 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+              <Link to="/" className="hover:text-accent transition-colors">Home</Link>
+              <span className="text-border">›</span>
+              <span className="text-navy">Products</span>
+            </nav>
+            <div className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-border">
+              <div className="lg:col-span-3">
+                <div className="text-[11px] uppercase tracking-[0.25em] text-accent font-bold">Our Portfolio</div>
+              </div>
+              <div className="lg:col-span-9">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-navy leading-[1.02] tracking-tight text-balance font-extrabold">
+                  Our <span className="text-accent">Products.</span>
+                </h1>
+                <p className="mt-8 text-lg lg:text-xl text-foreground/75 max-w-2xl leading-[1.55]">
+                  Six product lines engineered, customised and deployed across India's hospitals, municipalities and defence establishments.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Products Grid */}
+      <section className="py-20 lg:py-24 bg-paper-warm">
+        <div className="container">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+            {PRODUCTS.map((p, i) => (
+              <Reveal key={p.slug} delay={(i % 3) * 0.08}>
+                <a href={p.link} target="_blank" rel="noopener noreferrer" className="group block">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-muted mb-5">
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-4 left-4 right-4 flex items-start justify-between">
+                      <span className="text-[11px] uppercase tracking-wider text-paper bg-navy/80 backdrop-blur px-2.5 py-1.5 font-bold">
+                        0{i + 1} / 0{PRODUCTS.length}
+                      </span>
+                      <div className="h-9 w-9 grid place-items-center bg-paper text-navy translate-y-1 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                        <ArrowUpRight className="h-4 w-4" />
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                  <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-bold mb-2">
+                    {p.short}
+                  </div>
+                  <h3 className="text-xl lg:text-2xl text-navy leading-tight group-hover:text-accent transition-colors duration-300 font-bold">
+                    {p.name}
+                  </h3>
+                  <p className="mt-2 text-[14px] leading-[1.6] text-foreground/65 line-clamp-2">
+                    {p.description}
+                  </p>
+                  <div className="mt-4 pt-3 border-t border-border flex flex-wrap gap-x-4 gap-y-1.5">
+                    {p.variants.slice(0, 3).map((v) => (
+                      <span key={v} className="text-[11px] uppercase tracking-wider text-foreground/60 font-bold">
+                        {v}
+                      </span>
+                    ))}
+                    {p.variants.length > 3 && (
+                      <span className="text-[11px] uppercase tracking-wider text-accent font-bold">
+                        +{p.variants.length - 3}
+                      </span>
+                    )}
+                  </div>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Strip */}
+      <section className="bg-navy py-20">
+        <div className="container flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <Reveal>
+            <div className="text-[11px] uppercase tracking-wider text-accent font-bold mb-3">Custom Requirements?</div>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight max-w-lg">
+              We design and supply to your exact government specifications.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 text-[13px] font-bold uppercase tracking-wider hover:bg-white hover:text-navy transition-all duration-300 whitespace-nowrap"
+            >
+              Get a Quote <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
         </div>
       </section>
     </SiteLayout>
@@ -51,67 +117,112 @@ export function ProductDetail() {
 
   return (
     <SiteLayout>
-      <PageHero
-        eyebrow="Product"
-        title={product.name}
-        subtitle={product.short}
-        breadcrumbs={[
-          { label: "Home", to: "/" },
-          { label: "Products", to: "/products" },
-          { label: product.name },
-        ]}
-      />
-      <section className="py-20 lg:py-24">
-        <div className="container grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      {/* Page Hero */}
+      <section className="relative pt-36 pb-14 lg:pt-44 lg:pb-20 bg-paper border-b border-border">
+        <div className="container">
           <Reveal>
-            <div className="rounded-2xl overflow-hidden shadow-elegant aspect-[4/3]">
-              <img src={product.image} alt={product.name} className="w-full h-full object-cover" loading="lazy" />
+            <nav className="mb-12 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+              <Link to="/" className="hover:text-accent transition-colors">Home</Link>
+              <span className="text-border">›</span>
+              <Link to="/products" className="hover:text-accent transition-colors">Products</Link>
+              <span className="text-border">›</span>
+              <span className="text-navy">{product.name}</span>
+            </nav>
+            <div className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-border">
+              <div className="lg:col-span-3">
+                <div className="text-[11px] uppercase tracking-[0.25em] text-accent font-bold">Product</div>
+              </div>
+              <div className="lg:col-span-9">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl text-navy leading-[1.02] tracking-tight text-balance font-extrabold">
+                  {product.name}
+                </h1>
+                <p className="mt-8 text-lg lg:text-xl text-foreground/75 max-w-2xl leading-[1.55]">
+                  {product.short}
+                </p>
+              </div>
             </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold text-navy">{product.name}</h2>
-            <p className="mt-5 text-muted-foreground leading-relaxed">{product.description}</p>
-
-            <h3 className="mt-10 font-display text-lg font-bold text-navy uppercase tracking-wider text-sm">Available Variants</h3>
-            <ul className="mt-4 space-y-3">
-              {product.variants.map((v) => (
-                <li key={v} className="flex items-start gap-3 p-4 rounded-lg bg-steel border border-border">
-                  <CheckCircle2 className="h-5 w-5 text-electric shrink-0 mt-0.5" />
-                  <span className="text-sm font-medium text-navy">{v}</span>
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              to="/contact"
-              className="mt-10 inline-flex items-center gap-2 bg-navy hover:bg-electric text-white font-semibold px-7 py-4 rounded-md transition-all duration-300 btn-glow"
-            >
-              Request a Quote <ArrowRight className="h-4 w-4" />
-            </Link>
           </Reveal>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-section">
-        <div className="container">
-          <Reveal className="text-center mb-14">
-            <h2 className="underline-accent font-display text-3xl lg:text-4xl font-extrabold text-navy">Explore More Products</h2>
+      {/* Product Detail */}
+      <section className="py-20 lg:py-28 bg-paper">
+        <div className="container grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <Reveal className="lg:col-span-7">
+            <div className="aspect-[4/3] overflow-hidden bg-muted shadow-elegant relative group">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
           </Reveal>
-          <div className="grid md:grid-cols-3 gap-7">
-            {others.map((p) => (
-              <Link
-                key={p.slug}
-                to={`/products/${p.slug}`}
-                className="group block bg-white rounded-2xl overflow-hidden border border-border shadow-card-soft hover-lift"
+
+          <Reveal delay={0.1} className="lg:col-span-5 space-y-8">
+            <div>
+              <div className="text-[11px] uppercase tracking-wider text-accent font-bold mb-4">Description</div>
+              <p className="text-[17px] leading-relaxed text-foreground/75">{product.description}</p>
+            </div>
+
+            <div className="pt-8 border-t border-border">
+              <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-bold mb-6">Available Variants</div>
+              <ul className="space-y-3">
+                {product.variants.map((v) => (
+                  <li key={v} className="flex items-start gap-3 py-3 border-b border-border last:border-0">
+                    <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                    <span className="text-[15px] font-medium text-navy">{v}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="pt-4 flex flex-col sm:flex-row gap-4">
+              <a
+                href={product.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-between gap-6 bg-navy hover:bg-accent text-paper px-8 py-4 transition-all duration-500"
               >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={p.image} alt={p.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-lg font-bold text-navy group-hover:text-electric transition-colors">{p.name}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{p.short}</p>
-                </div>
+                <span className="uppercase tracking-wider text-[13px] font-bold">View Details</span>
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
+              <Link
+                to="/contact"
+                className="group inline-flex items-center justify-between gap-6 border border-navy text-navy hover:bg-navy hover:text-paper px-8 py-4 transition-all duration-500"
+              >
+                <span className="uppercase tracking-wider text-[13px] font-bold">Request a Quote</span>
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Related Products */}
+      <section className="py-20 bg-paper-warm border-t border-border">
+        <div className="container">
+          <Reveal className="grid lg:grid-cols-12 gap-8 pb-12 border-b border-border">
+            <div className="lg:col-span-3">
+              <div className="text-[13px] uppercase tracking-wider text-accent font-bold">More Products</div>
+            </div>
+            <div className="lg:col-span-9">
+              <h2 className="text-3xl lg:text-4xl text-navy font-extrabold">
+                Explore our other <span className="text-accent">product lines.</span>
+              </h2>
+            </div>
+          </Reveal>
+          <div className="mt-12 grid md:grid-cols-3 gap-x-6 gap-y-12">
+            {others.map((p, i) => (
+              <Reveal key={p.slug} delay={i * 0.08}>
+                <Link to={`/products/${p.slug}`} className="group block">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-muted mb-4">
+                    <img src={p.image} alt={p.name} className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105" loading="lazy" />
+                  </div>
+                  <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-bold mb-2">{p.short}</div>
+                  <h3 className="text-xl text-navy font-bold group-hover:text-accent transition-colors">{p.name}</h3>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>

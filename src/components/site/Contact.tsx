@@ -25,7 +25,7 @@ export default function Contact() {
         <Reveal className="grid lg:grid-cols-12 gap-8 pb-10 border-b border-border">
           <div className="lg:col-span-3">
             <div className="text-[13px] uppercase tracking-wider text-accent font-bold">
-              08 / Contact
+              BOOK APPOINTMENT / CONTACT US
             </div>
           </div>
           <div className="lg:col-span-9">
@@ -48,7 +48,7 @@ export default function Contact() {
                   <div className="flex items-center gap-3">
                     <Phone className="h-4 w-4 text-accent" />
                     <a href={`tel:${CONTACT.phone}`} className="text-xl text-navy hover:text-accent transition-colors font-bold tracking-tight">
-                      {CONTACT.phone}
+                      +91-8595551028
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
@@ -67,7 +67,7 @@ export default function Contact() {
                 <div className="space-y-4">
                   <div className="flex gap-3">
                     <MapPin className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                    <p className="text-base text-navy leading-snug font-bold">{CONTACT.address}</p>
+                    <p className="text-base text-navy leading-snug font-bold">Ghodu Infotech Pvt Ltd, A 65, Sector 4 Noida 201301</p>
                   </div>
                   <div className="flex gap-3">
                     <Clock className="h-4 w-4 text-accent shrink-0 mt-0.5" />
@@ -91,16 +91,13 @@ export default function Contact() {
           <Reveal delay={0.1} className="lg:col-span-8 bg-paper p-8 lg:p-10 border border-border shadow-sm">
             <form onSubmit={onSubmit} className="space-y-6">
               <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-bold border-b border-border pb-4 mb-2">
-                Make an appointment / Submit enquiry
+                Make an Appointment / Enquiry
               </div>
               <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
-                <Field label="Full name" name="name" placeholder="Your name" required />
-                <Field label="Email address" name="email" type="email" placeholder="you@company.com" required />
-                <Field label="Phone" name="phone" type="tel" placeholder="+91 ..." />
-                <Field label="Location / Subject" name="location" placeholder="Topic or city" />
-              </div>
-              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
-                <Field label="Preferred date" name="date" type="date" required />
+                <Field label="Write Your Name" name="name" placeholder="Your name" required />
+                <Field label="Email Address" name="email" type="email" placeholder="you@company.com" required />
+                <Field label="Preferred Date" name="date" type="date" required />
+                <Field label="Your Location" name="location" placeholder="Topic or city" required />
               </div>
               <div>
                 <label className="block text-[11px] uppercase tracking-wider text-muted-foreground mb-1.5 font-bold">
@@ -121,7 +118,7 @@ export default function Contact() {
                   className="group inline-flex items-center justify-between gap-8 bg-navy hover:bg-accent text-paper px-8 py-4 transition-all duration-500 disabled:opacity-70"
                 >
                   <span className="uppercase tracking-wider text-[13px] font-bold">
-                    {submitting ? "Sending..." : "Submit Inquiry"}
+                    {submitting ? "Sending..." : "Make an Appointment"}
                   </span>
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </button>

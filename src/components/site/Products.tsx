@@ -31,7 +31,7 @@ export default function Products() {
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
           {PRODUCTS.map((p, i) => (
             <Reveal key={p.slug} delay={(i % 3) * 0.08}>
-              <Link to={`/products/${p.slug}`} className="group block">
+              <a href={p.link} target="_blank" rel="noopener noreferrer" className="group block">
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted mb-4">
                   <img
                     src={p.image}
@@ -74,7 +74,7 @@ export default function Products() {
                     </span>
                   )}
                 </div>
-              </Link>
+              </a>
             </Reveal>
           ))}
         </div>

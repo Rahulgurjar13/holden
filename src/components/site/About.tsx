@@ -7,21 +7,21 @@ import { Reveal } from "./Reveal";
 const pillars = [
   {
     num: "01",
-    title: "Vision",
-    text: "To be the preferred, innovative supplier of quality oxygen, nitrogen, acetylene, nitrous oxide and CO₂ generation plants — demonstrating environmental awareness without compromising quality.",
-    href: "/about#vision",
+    title: "Our Vision",
+    text: "We want to be your preferred, Innovative supplier of Quality Oxygen, Nitrogen, Acetylene, Nitrous Oxide, Carbon-di-oxide Generation Plants demonstrating Environmental awareness without compromising Our Quality Policy.",
+    href: "https://holdenindia.com/our-vision/",
   },
   {
     num: "02",
-    title: "Mission",
-    text: "To offer innovative, customised solutions catering to specialised application requirements of varied industries — ensuring quality air and gas for all applications.",
-    href: "/about#mission",
+    title: "Our Mission",
+    text: "We offer innovative and customised solutions catering to specialised application requirements of varied industries and thereby, ensure the availability of quality air and gas for all applications.",
+    href: "https://holdenindia.com/our-mission/",
   },
   {
     num: "03",
     title: "Why Us",
-    text: "Our infrastructure is designed to meet diverse client needs with tailor-made solutions. Research plays a pivotal role from product ideation through manufacturing to deployment.",
-    href: "/about#why-us",
+    text: "Our infrastructure is designed to meet diverse client needs and deliver tailor-made solutions. Research plays a pivotal role in the entire development process, from product ideation to defining the manufacturing process.",
+    href: "https://holdenindia.com/why-us/",
   },
 ];
 
@@ -36,10 +36,10 @@ export default function About() {
         <Reveal className="max-w-4xl mb-6 lg:mb-10">
           <div className="text-[13px] uppercase tracking-wider text-accent font-bold mb-4 flex items-center gap-4">
             <span className="h-px w-8 bg-accent" />
-            01 / About the Company
+            01 / ABOUT OUR COMPANY
           </div>
           <h2 className="text-4xl lg:text-7xl text-navy leading-[1.05] tracking-tight font-extrabold text-pretty">
-            Sixteen years building India's most <span className="text-accent">critical</span> healthcare systems.
+            Established and leading healthcare <span className="text-accent">products</span> manufacturing & trading company.
           </h2>
         </Reveal>
 
@@ -49,26 +49,28 @@ export default function About() {
           <div className="lg:col-span-7 space-y-4 lg:space-y-6">
             <Reveal className="space-y-6">
               <div className="inline-block px-3 py-1 bg-navy/5 text-navy text-[11px] font-bold uppercase tracking-wider rounded-sm mb-2">
-                Established 2008
+                Flagship Company since 2008
               </div>
               <p className="text-lg lg:text-xl leading-relaxed text-navy font-medium">
-                Ghodu Infotech Pvt Ltd is a leading healthcare manufacturing and trading company specialising in government business — supplying medicines, surgicals, disposables and medical devices.
+                Ghodu Infotech Pvt. Ltd is a sky-high name, specialized in the development of healthcare infrastructure and medical devices for central government agencies and defense medical establishments.
               </p>
               <div className="space-y-5 text-[17px] leading-relaxed text-foreground/75 max-w-2xl">
                 <p>
-                  We are a trusted partner to central agencies, hospitals and Defence Medical establishments across India. Our sixteen-year legacy is built on a commitment to precision and reliability in medical infrastructure.
+                  We are an established and leading healthcare products manufacturing & trading company only in Government business supplying medicines, surgical, disposables and medical devices to central government agencies, central government hospitals & Défense Medical establishment across India. Ghodu Infotech Private Limited is a flagship Company from last 16 years and has been into the business of serving the agencies in health care.
                 </p>
                 <p>
-                  A flagship enterprise, we are authorised distributors for industry giants including <span className="text-navy font-bold">Getinge, Trivitron, Abbott Healthcare, Cipla, Lupin, Gland Pharma</span> and <span className="text-navy font-bold">Glenmark Pharmaceuticals</span>.
+                  The entire product array is designed and manufactured using modern technology at our own facility. We are an exclusive authorized distributor/channel partner for many leading companies namely <span className="text-navy font-bold">Getinge, Trivitron, New Red Lab Equipment's, Reliance Life Sciences Ltd, Abbott Healthcare India Pvt. Ltd, Cipla Ltd, Ranbaxy Laboratories Ltd, Lupin Ltd, Gland Pharma Ltd, Glenmark Pharmaceuticals Ltd.</span> We look forward to your valuable response and ready to serve your state.
                 </p>
               </div>
               <div className="pt-4">
-                <Link
-                  to="/about"
+                <a
+                  href="https://holdenindia.com/about-us/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center gap-3 bg-navy text-paper px-8 py-4 text-[13px] font-bold uppercase tracking-wider hover:bg-accent transition-all duration-300"
                 >
-                  Full Company Profile <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
+                  READ MORE <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
               </div>
             </Reveal>
 
@@ -130,7 +132,7 @@ export default function About() {
               delay={i * 0.1}
               className="group relative bg-paper p-5 lg:p-7 hover:bg-paper-warm transition-colors duration-500"
             >
-              <Link to={p.href} className="block space-y-3">
+              <a href={p.href} target="_blank" rel="noopener noreferrer" className="block space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-accent font-bold tracking-widest">{p.num}</span>
                   <div className="h-10 w-10 rounded-full border border-border flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-white transition-all duration-500">
@@ -138,12 +140,15 @@ export default function About() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-3xl lg:text-4xl text-navy leading-tight mb-4 font-bold">
+                  <h3 className="text-2xl lg:text-3xl text-navy leading-tight mb-4 font-bold">
                     {p.title}
                   </h3>
                   <p className="text-[16px] leading-relaxed text-foreground/75">{p.text}</p>
+                  <div className="pt-2 text-[11px] uppercase tracking-wider text-accent font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                    Know More
+                  </div>
                 </div>
-              </Link>
+              </a>
             </Reveal>
           ))}
         </div>
