@@ -9,19 +9,19 @@ const pillars = [
     num: "01",
     title: "Our Vision",
     text: "We want to be your preferred, Innovative supplier of Quality Oxygen, Nitrogen, Acetylene, Nitrous Oxide, Carbon-di-oxide Generation Plants demonstrating Environmental awareness without compromising Our Quality Policy.",
-    href: "https://holdenindia.com/our-vision/",
+    href: "/about#vision",
   },
   {
     num: "02",
     title: "Our Mission",
     text: "We offer innovative and customised solutions catering to specialised application requirements of varied industries and thereby, ensure the availability of quality air and gas for all applications.",
-    href: "https://holdenindia.com/our-mission/",
+    href: "/about#mission",
   },
   {
     num: "03",
     title: "Why Us",
     text: "Our infrastructure is designed to meet diverse client needs and deliver tailor-made solutions. Research plays a pivotal role in the entire development process, from product ideation to defining the manufacturing process.",
-    href: "https://holdenindia.com/why-us/",
+    href: "/about#why-us",
   },
 ];
 
@@ -63,14 +63,12 @@ export default function About() {
                 </p>
               </div>
               <div className="pt-4">
-                <a
-                  href="https://holdenindia.com/about-us/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/about"
                   className="group inline-flex items-center gap-3 bg-navy text-paper px-8 py-4 text-[13px] font-bold uppercase tracking-wider hover:bg-accent transition-all duration-300"
                 >
                   READ MORE <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
+                </Link>
               </div>
             </Reveal>
 
@@ -132,7 +130,7 @@ export default function About() {
               delay={i * 0.1}
               className="group relative bg-paper p-5 lg:p-7 hover:bg-paper-warm transition-colors duration-500"
             >
-              <a href={p.href} target="_blank" rel="noopener noreferrer" className="block space-y-3">
+              <Link to={p.href} className="block space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-accent font-bold tracking-widest">{p.num}</span>
                   <div className="h-10 w-10 rounded-full border border-border flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-white transition-all duration-500">
@@ -148,7 +146,7 @@ export default function About() {
                     Know More
                   </div>
                 </div>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>

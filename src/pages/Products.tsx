@@ -39,7 +39,7 @@ export function ProductsList() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
             {PRODUCTS.map((p, i) => (
               <Reveal key={p.slug} delay={(i % 3) * 0.08}>
-                <a href={p.link} target="_blank" rel="noopener noreferrer" className="group block">
+                <Link to={`/products/${p.slug}`} className="group block">
                   <div className="relative aspect-[4/3] overflow-hidden bg-muted mb-5">
                     <img
                       src={p.image}
@@ -78,7 +78,7 @@ export function ProductsList() {
                       </span>
                     )}
                   </div>
-                </a>
+                </Link>
               </Reveal>
             ))}
           </div>

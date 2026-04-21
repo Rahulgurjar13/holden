@@ -47,10 +47,8 @@ export function ServicesList() {
           <div className="mt-4">
             {SERVICES.map((s, i) => (
               <Reveal key={s.slug} delay={i * 0.05}>
-                <a
-                  href={s.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={`/services/${s.slug}`}
                   className="group grid lg:grid-cols-12 gap-6 lg:gap-10 items-baseline py-10 lg:py-12  hover:bg-paper-warm/60 transition-colors duration-500 -mx-6 px-6 lg:-mx-10 lg:px-10"
                 >
                   <div className="lg:col-span-1">
@@ -72,7 +70,7 @@ export function ServicesList() {
                       <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </div>
                   </div>
-                </a>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -190,16 +188,14 @@ export function ServiceDetail() {
               <div className="mt-10 pt-8 border-t border-white/10 space-y-2">
                 <div className="text-[11px] uppercase tracking-wider text-white/40 font-bold">Other Services</div>
                 {others.map((o) => (
-                  <a
+                  <Link
                     key={o.slug}
-                    href={o.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    to={`/services/${o.slug}`}
                     className="flex items-center justify-between gap-4 py-3 border-b border-white/10 group/item last:border-0"
                   >
                     <span className="text-[14px] text-white/70 group-hover/item:text-white transition-colors font-medium">{o.name}</span>
                     <ArrowUpRight className="h-3.5 w-3.5 text-white/40 group-hover/item:text-accent transition-colors shrink-0" />
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

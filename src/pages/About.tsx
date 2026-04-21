@@ -10,21 +10,21 @@ const pillars = [
     id: "vision",
     num: "01",
     title: "Our Vision",
-    href: "https://holdenindia.com/our-vision/",
+    href: "/about#vision",
     body: "We want to be your preferred, Innovative supplier of Quality Oxygen, Nitrogen, Acetylene, Nitrous Oxide, Carbon-di-oxide Generation Plants demonstrating Environmental awareness without compromising Our Quality Policy.",
   },
   {
     id: "mission",
     num: "02",
     title: "Our Mission",
-    href: "https://holdenindia.com/our-mission/",
+    href: "/about#mission",
     body: "We offer innovative and customised solutions catering to specialised application requirements of varied industries and thereby, ensure the availability of quality air and gas for all applications.",
   },
   {
     id: "why-us",
     num: "03",
     title: "Why Us",
-    href: "https://holdenindia.com/why-us/",
+    href: "/about#why-us",
     body: "Our infrastructure is designed to meet diverse client needs and deliver tailor-made solutions. Research plays a pivotal role in the entire development process, from product ideation to defining the manufacturing process.",
   },
 ];
@@ -154,7 +154,7 @@ export default function About() {
                 delay={i * 0.1}
                 className="group relative bg-paper p-7 lg:p-10 hover:bg-navy transition-colors duration-500"
               >
-                <a href={p.href} target="_blank" rel="noopener noreferrer" className="block space-y-5">
+                <Link to={`/about#${p.id}`} className="block space-y-5">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-accent font-bold tracking-widest group-hover:text-accent">{p.num}</span>
                     <div className="h-10 w-10 border border-border flex items-center justify-center group-hover:bg-accent group-hover:border-accent group-hover:text-white transition-all duration-500">
@@ -170,7 +170,7 @@ export default function About() {
                   <div className="text-[11px] uppercase tracking-wider text-accent font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                     Know More
                   </div>
-                </a>
+                </Link>
               </Reveal>
             ))}
           </div>
